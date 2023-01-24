@@ -1,3 +1,5 @@
+import { Outlet } from 'react-router-dom';
+
 import CategoriesContainer
   from '../../components/categories-container/categories-container.component';
 
@@ -29,7 +31,13 @@ const Home = () => {
       'imageUrl': 'https://i.ibb.co/R70vBrQ/men.png',
     },
   ];
-  return <CategoriesContainer categories={ categories } />;
-}
+  return (
+      <div>
+        <CategoriesContainer categories={ categories } />;
+        <Outlet />
+      </div>
+  );
+
+};
 
 export default Home;
